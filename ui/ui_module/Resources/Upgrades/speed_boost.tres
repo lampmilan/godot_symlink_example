@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://clbcyu8lwwfcy"]
+
+[ext_resource type="Script" uid="uid://cudaltvhigobv" path="res://ui_module/Resources/upgrades.gd" id="1_myfwq"]
+[ext_resource type="Texture2D" uid="uid://d8oh4ow0iwdi" path="res://shared/Assets/golds/large.png" id="1_qghsa"]
+
+[resource]
+script = ExtResource("1_myfwq")
+upgrade_id = "speed"
+upgrade_name = "Speed Boost"
+price = 20
+coin_icon = ExtResource("1_qghsa")
+metadata/_custom_type_script = "uid://cudaltvhigobv"

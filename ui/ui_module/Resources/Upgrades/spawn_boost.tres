@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://blcyettend605"]
+
+[ext_resource type="Script" uid="uid://cudaltvhigobv" path="res://ui_module/Resources/upgrades.gd" id="1_41inj"]
+[ext_resource type="Texture2D" uid="uid://bkngap1xtr3i" path="res://shared/Assets/golds/medium.png" id="1_r7r48"]
+
+[resource]
+script = ExtResource("1_41inj")
+upgrade_id = "spawn"
+upgrade_name = "Increase Spawn"
+price = 10
+coin_icon = ExtResource("1_r7r48")
+metadata/_custom_type_script = "uid://cudaltvhigobv"

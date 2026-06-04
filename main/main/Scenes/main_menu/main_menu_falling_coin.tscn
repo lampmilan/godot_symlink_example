@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2pqyhpy70ebo"]
+
+[ext_resource type="Script" uid="uid://bpai8wmbi3xgg" path="res://main/Scripts/main_menu/main_menu_falling_coin.gd" id="1_up6nk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lbcs7"]
+radius = 6.08276
+
+[node name="MainMenuFallingCoin" type="Sprite2D"]
+script = ExtResource("1_up6nk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_lbcs7")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

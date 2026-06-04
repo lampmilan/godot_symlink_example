@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Gold" load_steps=3 format=3 uid="uid://dv2pkl4ruxddn"]
+
+[ext_resource type="Script" uid="uid://ch6keyt82yews" path="res://playfield_module/Resources/gold_res.gd" id="1_eas2b"]
+[ext_resource type="Texture2D" uid="uid://l2eudahl5u4" path="res://shared/Assets/golds/small.png" id="1_knr5i"]
+
+[resource]
+script = ExtResource("1_eas2b")
+gold_sprite = ExtResource("1_knr5i")
+drop_weight = 100
+value = 1
+metadata/_custom_type_script = "uid://ch6keyt82yews"

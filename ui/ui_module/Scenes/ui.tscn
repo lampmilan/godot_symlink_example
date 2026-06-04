@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcwew8aag6b08"]
+
+[ext_resource type="Script" uid="uid://d37dp2s0rf1t8" path="res://ui_module/Scripts/ui.gd" id="1_e84sn"]
+[ext_resource type="Script" uid="uid://cc0h6turaoawy" path="res://ui_module/Scripts/gold_counter.gd" id="2_17liw"]
+[ext_resource type="PackedScene" uid="uid://cyg16iypaog3p" path="res://ui_module/Scenes/button_with_price.tscn" id="2_tf08m"]
+[ext_resource type="FontFile" uid="uid://03w4wq4ex8nn" path="res://shared/Assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_vbjft"]
+[ext_resource type="Resource" uid="uid://b82f4o8rxhudd" path="res://ui_module/Resources/Upgrades/luck_boost.tres" id="3_17liw"]
+[ext_resource type="Resource" uid="uid://blcyettend605" path="res://ui_module/Resources/Upgrades/spawn_boost.tres" id="4_vbjft"]
+[ext_resource type="Resource" uid="uid://clbcyu8lwwfcy" path="res://ui_module/Resources/Upgrades/speed_boost.tres" id="5_niwwe"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e84sn")
+
+[node name="MainPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 241.0
+offset_bottom = -335.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 18.0
+offset_right = -14.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GoldPanel" type="Panel" parent="MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="GoldCounter" type="Label" parent="MainPanel/VBoxContainer/GoldPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_vbjft")
+theme_override_font_sizes/font_size = 26
+text = "Gold
+9999999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_17liw")
+
+[node name="HSeparator" type="HSeparator" parent="MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="UpgradeVBoxContainer" type="VBoxContainer" parent="MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="ButtonWithPrice" parent="MainPanel/VBoxContainer/UpgradeVBoxContainer" instance=ExtResource("2_tf08m")]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+upgrade_resource = ExtResource("3_17liw")
+
+[node name="ButtonWithPrice2" parent="MainPanel/VBoxContainer/UpgradeVBoxContainer" instance=ExtResource("2_tf08m")]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+upgrade_resource = ExtResource("4_vbjft")
+
+[node name="ButtonWithPrice3" parent="MainPanel/VBoxContainer/UpgradeVBoxContainer" instance=ExtResource("2_tf08m")]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+upgrade_resource = ExtResource("5_niwwe")

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyg16iypaog3p"]
+
+[ext_resource type="Script" uid="uid://uuud8k3rnnfu" path="res://ui_module/Scripts/button_with_price.gd" id="1_6q8jw"]
+[ext_resource type="Texture2D" uid="uid://brr622k47jtli" path="res://ui_module/Asset/price.png" id="1_sitbc"]
+[ext_resource type="FontFile" uid="uid://03w4wq4ex8nn" path="res://shared/Assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_pbat3"]
+
+[node name="ButtonWithPrice" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_6q8jw")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpgradeLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pbat3")
+text = "Speed Upgrade"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_sitbc")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="PriceLabel" type="Label" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "100000"

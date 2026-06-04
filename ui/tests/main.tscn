@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsj120os8quaw"]
+
+[ext_resource type="PackedScene" uid="uid://dcwew8aag6b08" path="res://ui_module/Scenes/ui.tscn" id="1_ctdtd"]
+[ext_resource type="Script" uid="uid://dyp5olyix35gt" path="res://tests/scripts/money_manager_mock.gd" id="2_pi5dy"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ui" parent="." instance=ExtResource("1_ctdtd")]
+layout_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 162.0
+offset_right = 900.0
+offset_bottom = 240.0
+text = "Add 10 gold"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 665.0
+offset_top = 354.0
+offset_right = 899.0
+offset_bottom = 432.0
+text = "Remove 10 gold"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 253.0
+offset_right = 900.0
+offset_bottom = 331.0
+text = "Add 100 gold"
+
+[node name="MoneyManagerMock" type="Node" parent="."]
+script = ExtResource("2_pi5dy")
+
+[connection signal="upgrade_bought" from="Ui" to="MoneyManagerMock" method="_on_upgrade_bought"]
+[connection signal="pressed" from="Button" to="MoneyManagerMock" method="change_money" binds= [10]]
+[connection signal="pressed" from="Button3" to="MoneyManagerMock" method="change_money" binds= [-10]]
+[connection signal="pressed" from="Button2" to="MoneyManagerMock" method="change_money" binds= [100]]
+[connection signal="amount_changed" from="MoneyManagerMock" to="Ui" method="upgrade_gold"]

@@ -1,0 +1,215 @@
+[gd_scene load_steps=6 format=3 uid="uid://lsouvwcrwk4b"]
+
+[ext_resource type="Script" uid="uid://bufecag13fxjo" path="res://main/Scripts/main_menu/main_menu_coin_spawner.gd" id="1_rnajp"]
+[ext_resource type="Script" uid="uid://c6nvjy4x5g08b" path="res://main/Scripts/main_menu/main_menu.gd" id="1_w2tc4"]
+[ext_resource type="Texture2D" uid="uid://c8nv743qnw3l0" path="res://main/Assets/menu_bg.png" id="2_w2tc4"]
+[ext_resource type="FontFile" uid="uid://03w4wq4ex8nn" path="res://shared/Assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_65dx0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oci66"]
+size = Vector2(1169, 78)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w2tc4")
+
+[node name="MainMenuCoinSpawner" type="Node" parent="." node_paths=PackedStringArray("coin_collection")]
+script = ExtResource("1_rnajp")
+coin_collection = NodePath("../CoinCollection")
+metadata/_custom_type_script = "uid://bufecag13fxjo"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w2tc4")
+
+[node name="CoinCollection" type="Node2D" parent="."]
+
+[node name="DeleteArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeleteArea2D"]
+position = Vector2(574.5, 724)
+shape = SubResource("RectangleShape2D_oci66")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.5
+offset_top = -197.0
+offset_right = 181.5
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_65dx0")
+theme_override_font_sizes/font_size = 56
+text = "CoinCollector"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -68.0
+offset_right = 115.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="AboutButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "About Game"
+
+[node name="CreditButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="AboutPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -96.0
+offset_right = 250.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="AboutPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -77.0
+offset_right = 238.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AboutPanel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = -17.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This project demonstrates how to utilize symbolic links (symlinks) to break a Godot game down into independent, modular sub-projects. This example illustrates how to separate core concepts, enforce boundaries, and achieve a loosely coupled architecture across a game systems."
+
+[node name="Button" type="Button" parent="AboutPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 5.0
+offset_right = -12.0
+offset_bottom = 36.0
+grow_horizontal = 0
+text = "close"
+
+[node name="Label" type="Label" parent="AboutPanel"]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 60.0
+offset_bottom = 34.0
+text = "About"
+
+[node name="CreditPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -96.0
+offset_right = 250.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CreditPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -77.0
+offset_right = 238.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditPanel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = -17.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player sprite: Antifarea | opengameart.org
+Coins: Bonsaiheldin | opengameart.org
+Font: Pixelify Sans | Google Fonts"
+
+[node name="Button" type="Button" parent="CreditPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 5.0
+offset_right = -12.0
+offset_bottom = 36.0
+grow_horizontal = 0
+text = "close"
+
+[node name="Label" type="Label" parent="CreditPanel"]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 60.0
+offset_bottom = 34.0
+text = "Credits"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/AboutButton" to="AboutPanel" method="set_visible" binds= [true]]
+[connection signal="pressed" from="VBoxContainer/CreditButton" to="CreditPanel" method="set_visible" binds= [true]]
+[connection signal="pressed" from="AboutPanel/Button" to="AboutPanel" method="set_visible" binds= [false]]
+[connection signal="pressed" from="CreditPanel/Button" to="CreditPanel" method="set_visible" binds= [false]]

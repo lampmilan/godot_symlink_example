@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1va0ylkp6wvx"]
+
+[ext_resource type="Script" uid="uid://wepr52llfbmn" path="res://playfield_module/Scripts/player_script.gd" id="1_0b72o"]
+[ext_resource type="SpriteFrames" uid="uid://du7oyxqsg81xv" path="res://playfield_module/Assets/player.tres" id="2_iaq0p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m363b"]
+radius = 17.1172
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("sprite_child")]
+script = ExtResource("1_0b72o")
+sprite_child = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_iaq0p")
+frame_progress = 0.0636952
+
+[node name="PickupArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CircleShape2D_m363b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m363b")
