@@ -1,4 +1,4 @@
-# Multi-Project Godot Architecture (Symlink Sandbox)
+# Multi-Project Godot Architecture
 This repository serves as a technical proof of concept demonstrating how to scale complex Godot games by decoupling separate systems into entirely independent Godot sub-projects using OS-level symbolic links (symlinks).
 
 The goal of this architecture to enforce code coupling, allow independent testing workflows, and to build well defined systems, which can works on its own and can be seamlessly integrated to a main project.
