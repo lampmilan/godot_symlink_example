@@ -21,7 +21,7 @@ cd godot_symlink_example
 
 ### 2. Generate the Symbolic Links
 
-Because symbolic links point to local absolute/relative file paths on disk, they cannot be natively tracked via Git. You must initialize them on your machine depending on your Operating System.
+Because symbolic links point to local absolute or relative file paths on disk, they cannot be transferred between machines. You must initialize them on your local machine depending on your operating system.
 #### **On Windows (PowerShell or Command Prompt):**
 
 PowerShell
